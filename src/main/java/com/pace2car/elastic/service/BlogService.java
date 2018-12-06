@@ -12,5 +12,12 @@ public interface BlogService {
      * @param id
      * @return
      */
-    Blog findBlogById(Integer id);
+    Blog queryBlogById(String id);
+
+    /**
+     * 根据标题查文章
+     * @param title
+     * @return
+     */
+    Blog findBlogByTitle(String title);
 }

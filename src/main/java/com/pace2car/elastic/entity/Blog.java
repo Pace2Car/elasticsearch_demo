@@ -11,11 +11,12 @@ import java.io.Serializable;
  * @author Pace2Car
  * @date 2018/12/5 16:05
  */
-@Document(indexName = "javademo", type = "article")
+@Document(indexName = "javademo", type = "blog")
 public class Blog implements Serializable {
 
     @Id
-    private Long id;
+    @Field(index = false, store = true, type = FieldType.Integer)
+    private Integer id;
 
     @Field(analyzer = "ik", store = true, searchAnalyzer = "ik", type = FieldType.Text)
     private String title;
@@ -32,7 +33,7 @@ public class Blog implements Serializable {
     public Blog() {
     }
 
-    public Blog(Long id, String title, String content, String postdate, String url) {
+    public Blog(Integer id, String title, String content, String postdate, String url) {
         this.id = id;
         this.title = title;
         this.content = content;
@@ -40,11 +41,11 @@ public class Blog implements Serializable {
         this.url = url;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

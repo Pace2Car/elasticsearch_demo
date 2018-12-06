@@ -1,5 +1,6 @@
 package com.pace2car.esTest;
 
+import com.pace2car.elastic.entity.Blog;
 import com.pace2car.elastic.service.BlogService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,6 +21,11 @@ public class EsSpringTest {
 
     @Test
     public void testFind() {
-        blogService.findBlogById(1);
+        System.out.println(blogService.queryBlogById("1"));
+    }
+
+    @Test
+    public void testFindByTitle() {
+        System.out.println(blogService.findBlogByTitle("_3"));
     }
 }

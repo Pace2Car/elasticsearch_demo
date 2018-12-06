@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author Pace2Car
@@ -26,5 +27,10 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public Blog findBlogByTitle(String title) {
         return blogRepository.findBlogByTitle(title);
+    }
+
+    @Override
+    public List<Blog> findAllByTitle(String title) {
+        return blogRepository.findAllByTitle(title);
     }
 }

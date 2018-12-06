@@ -2,6 +2,8 @@ package com.pace2car.elastic.service;
 
 import com.pace2car.elastic.entity.Blog;
 
+import java.util.List;
+
 /**
  * @author Pace2Car
  * @date 2018/12/5 16:33
@@ -20,4 +22,10 @@ public interface BlogService {
      * @return
      */
     Blog findBlogByTitle(String title);
+
+    /**
+     * 根据标题查找所有文章
+     * @return
+     */
+    List<Blog> findAllByTitle(String title);
 }

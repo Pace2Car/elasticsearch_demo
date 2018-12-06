@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.List;
+
 /**
  * @author Pace2Car
  * @date 2018/12/5 16:42
@@ -27,5 +29,13 @@ public class EsSpringTest {
     @Test
     public void testFindByTitle() {
         System.out.println(blogService.findBlogByTitle("_3"));
+    }
+
+    @Test
+    public void testFindAll() {
+        List<Blog> blogs = blogService.findAllByTitle("学习");
+        for (Blog blog : blogs) {
+            System.out.println(blog);
+        }
     }
 }

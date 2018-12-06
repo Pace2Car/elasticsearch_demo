@@ -4,6 +4,8 @@ import com.pace2car.elastic.entity.Blog;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * @author Pace2Car
  * @date 2018/12/5 16:17
@@ -24,4 +26,13 @@ public interface BlogRepository extends ElasticsearchRepository<Blog, String> {
      * @return
      */
     Blog findBlogByTitle(String title);
+
+
+    /**
+     * 根据标题查找所有文章
+     * @param title
+     * @return
+     */
+    List<Blog> findAllByTitle(String title);
+
 }
